@@ -1,8 +1,34 @@
+"use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [navbarVisible, setNavbarVisible] = useState(true);
+  useEffect(() => {
+    let lastScrollTop = 0;
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        setNavbarVisible(false);
+      } else {
+        // Scrolling up
+        setNavbarVisible(true);
+      }
+      lastScrollTop = scrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <nav className="max-w-7xl fixed top-4 mx-auto inset-x-0 z-50 w-[95%] lg:w-full transform-none">
+    <nav
+      className={`max-w-7xl fixed top-4 mx-auto inset-x-0 z-50 w-[95%] lg:w-full transform transition-transform duration-300 ${
+        navbarVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="hidden lg:block w-full">
         <div className="w-full flex relative justify-center px-4 py-3 rounded-md duration-200 bg-transparent">
           <div className="flex flex-row items-center gap-2">
