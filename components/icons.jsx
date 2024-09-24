@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 export default function Icon({ src }) {
   return (
     <div className="flex space-x-2">
