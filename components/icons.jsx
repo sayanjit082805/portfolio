@@ -1,7 +1,7 @@
 import Image from "next/legacy/image";
 export default function Icon({ src }) {
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-4">
       {src.map((src) => (
         <Image
           key={src}

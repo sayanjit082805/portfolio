@@ -91,7 +91,7 @@ export default function Tech() {
         {skills.map((skill, index) => (
           <div
             key={index}
-            className="flex items-center gap-3 ring-2 ring-inset ring-zinc-50/10 rounded-2xl p-3 hover:bg bg-black/[0.96] antialiased transition-color hover:bg-zinc-800 w-11/12 md:w-96"
+            className="flex items-center gap-3 ring-2 ring-inset ring-zinc-50/10 rounded-2xl p-3 hover:bg bg-black/[0.96] antialiased transition-color hover:ring-sky-700 w-11/12 md:w-96"
           >
             <figure className="hover:bg-neutral-900/[0.96] rounded-lg p-2 overflow-hidden w-12 h-12">
               <Image

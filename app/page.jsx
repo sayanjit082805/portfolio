@@ -2,50 +2,90 @@
 import "./globals.css";
 import React from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
-import { BentoGrid, BentoGridItem } from "@/components/ui/grid";
 import { motion } from "framer-motion";
 import Tech from "@/components/tech";
-import Icon from "@/components/icons";
-import Banner from "@/components/banner";
+import { PinContainer } from "@/components/ui/3d-pin";
 
 const items = [
   {
+    id: 1,
     title: "TheMovieCentral",
     description: "Search and fetch details of thousands of movies.",
-    header: <Banner src="movie" alt="TheMovieCentral" />,
-    icon: <Icon src={["javascript", "react", "tailwindcss"]} />,
+    img: "/banners/movie.png",
+    iconLists: [
+      "/skills/react.svg",
+      "/skills/tailwindcss.svg",
+      "/skills/javascript.svg",
+      "/skills/framer.svg",
+      "/skills/vite.svg",
+    ],
+    link: "https://github.com/sayanjit082805/TheMovieCentral",
   },
   {
+    id: 2,
     title: "AtmosAlert",
     description: "Get weather details of any city.",
-    header: <Banner src={"weather-1"} alt={"AtmosAlert"} />,
-    icon: <Icon src={["javascript", "react", "tailwindcss"]} />,
+    img: "/banners/weather-1.png",
+    iconLists: [
+      "/skills/react.svg",
+      "/skills/tailwindcss.svg",
+      "/skills/javascript.svg",
+      "/skills/vite.svg",
+    ],
+    link: "https://github.com/sayanjit082805/AtmosAlert",
   },
   {
+    id: 3,
     title: "FactFlow",
     description: "Fetch random and fun facts.",
-    header: <Banner src={"fact"} alt={"FactFlow"} />,
-    icon: <Icon src={["javascript", "react", "tailwindcss"]} />,
+    img: "/banners/fact.png",
+    iconLists: [
+      "/skills/react.svg",
+      "/skills/tailwindcss.svg",
+      "/skills/javascript.svg",
+      "/skills/framer.svg",
+      "/skills/vite.svg",
+    ],
+    link: "https://github.com/sayanjit082805/FactFlow",
   },
   {
+    id: 4,
     title: "QuoteStream",
-    description: "Motivate yourself with inspirational speeches.",
-    header: <Banner src={"quotes"} alt={"QuoteStream"} />,
-    icon: <Icon src={["html", "tailwindcss", "javascript"]} />,
+    description: "Motivate yourself with inspirational quotes.",
+    img: "/banners/quotes.png",
+    iconLists: [
+      "/skills/html.svg",
+      "/skills/tailwindcss.svg",
+      "/skills/javascript.svg",
+    ],
+    link: "https://github.com/sayanjit082805/QuoteStream",
   },
   {
+    id: 5,
     title: "PMSS Scholarship Portal",
     description: "Collaborative project built for a hackathon.",
-    header: <Banner src={"scholarship"} alt={"pmsss"} />,
-    icon: <Icon src={["javascript", "next", "tailwindcss"]} />,
+    img: "/banners/scholarship.png",
+    iconLists: [
+      "/skills/next.svg",
+      "/skills/tailwindcss.svg",
+      "/skills/javascript.svg",
+      "/skills/postgres.svg",
+    ],
+    link: "https://github.com/sayanjit082805/TechRookies_sih_1728",
   },
   {
+    id: 6,
     title: "AuraX",
     description:
       "Another weather app and my first project, in collaboration with two friends.",
-    header: <Banner src={"weather-2"} alt={"AuraX"} />,
-    icon: <Icon src={["python", "gui"]} />,
+    img: "/banners/weather-2.png",
+    iconLists: [
+      "/skills/python.svg",
+      "/skills/gui.svg",
+    ],
+    link: "https://github.com/wolfofdalalst/weather-update",
   },
+  
 ];
 
 export default function Home() {
@@ -81,10 +121,10 @@ export default function Home() {
           <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 lg:leading-tight">
             Tech Stack
           </h1>
-          <div className="absolute inset-x-20 top-20 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-20 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-          <div className="absolute inset-x-60 top-20 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 top-20 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+          <div className="absolute inset-x-16 md:inset-x-20 top-16 md:top-20 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute inset-x-16 md:inset-x-20 top-16 md:top-20 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+          <div className="absolute inset-x-36 md:inset-x-60 top-16 md:top-20 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-36 md:inset-x-60 top-16 md:top-20 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
         </div>
         <motion.div
           initial={{ opacity: 0.0, x: 60 }}
@@ -99,15 +139,15 @@ export default function Home() {
           <Tech />
         </motion.div>
       </div>
-      <div className="md:h-[40rem] w-full flex md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden min-h-screen">
-        <div className="md:w-[40rem] md:h-[100vh] relative w-full max-w-7xl h-[1650px]">
+      <div className="w-full flex md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
+        <div className="md:w-[40rem] relative w-full max-w-7xl md:h-[70rem] h-[2850px]">
           <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 lg:leading-tight">
             Projects
           </h1>
-          <div className="absolute inset-x-20 top-20 bg-gradient-to-r from-transparent via-red-600 to-transparent h-[2px] w-3/4 blur-sm" />
-          <div className="absolute inset-x-20 top-20 bg-gradient-to-r from-transparent via-rose-300 to-transparent h-px w-3/4" />
-          <div className="absolute inset-x-60 top-20 bg-gradient-to-r from-transparent via-rose-500 to-transparent h-[5px] w-1/4 blur-sm" />
-          <div className="absolute inset-x-60 top-20 bg-gradient-to-r from-transparent via-rose-800 to-transparent h-px w-1/4" />
+          <div className="absolute inset-x-16 md:inset-x-20 top-16 md:top-20 bg-gradient-to-r from-transparent via-red-600 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute inset-x-16 md:inset-x-20 top-16 md:top-20 bg-gradient-to-r from-transparent via-rose-300 to-transparent h-px w-3/4" />
+          <div className="absolute inset-x-36 md:inset-x-60 top-16 md:top-20 bg-gradient-to-r from-transparent via-rose-500 to-transparent h-[5px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-36 md:inset-x-60 top-16 md:top-20 bg-gradient-to-r from-transparent via-rose-800 to-transparent h-px w-1/4" />
         </div>
         <motion.div
           initial={{ opacity: 0.0, x: 60 }}
@@ -117,20 +157,45 @@ export default function Home() {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="my-20 absolute  w-full px-4 mt-32 items-center"
+          className="absolute w-full px-4 mt-10 items-center flex flex-wrap justify-center p-4 gap-16"
         >
-          <BentoGrid>
-            {items.map((item, i) => (
-              <BentoGridItem
-                key={i}
-                title={item.title}
-                description={item.description}
-                header={item.header}
-                icon={item.icon}
-                className="bg-gradient-to-br from-zinc-900 dark:from-neutral-900 dark:to-neutral-800 to-neutral-800"
-              />
-            ))}
-          </BentoGrid>
+          {items.map((item) => (
+            <div
+              key={item.id}
+              className="flex items-center justify-center sm:w-96 w-[80vw] md:mt-20 mt-[50px] p-4"
+            >
+              <PinContainer title={item.title} href={item.link}>
+                <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh]">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="z-10 absolute bottom-0 rounded-xl"
+                  />
+                </div>
+                <h1 className="font-bold lg:text-xl md:text-lg text-base line-clamp-1 text-zinc-500 mt-10 antialiased">
+                  {item.title}
+                </h1>
+                <p className="text-md lg:font-normal font-light text-sm line-clamp-2 antialiased text-zinc-200">
+                  {item.description}
+                </p>
+                <div className="flex items-center justify-between mt-7 mb-3">
+                  <div className="flex items-center">
+                    {item.iconLists.map((icon, index) => (
+                      <div
+                        key={icon}
+                        className="border border-white/[0.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                        style={{
+                          transform: `translateX(-${5 * index * 2}px)`,
+                        }}
+                      >
+                        <img src={icon} alt={icon} className="p-2" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </PinContainer>
+            </div>
+          ))}
         </motion.div>
       </div>
     </>
