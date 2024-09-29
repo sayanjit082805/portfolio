@@ -4,89 +4,16 @@ import React from "react";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { motion } from "framer-motion";
 import Tech from "@/components/tech";
-import { PinContainer } from "@/components/ui/3d-pin";
+import dynamic from "next/dynamic";
+import items from "@/lib/data";
 
-const items = [
+const PinContainer = dynamic(
+  () => import("@/components/ui/3d-pin").then((mod) => mod.PinContainer),
   {
-    id: 1,
-    title: "TheMovieCentral",
-    description: "Search and fetch details of thousands of movies.",
-    img: "/banners/movie.png",
-    iconLists: [
-      "/skills/react.svg",
-      "/skills/tailwindcss.svg",
-      "/skills/javascript.svg",
-      "/skills/framer.svg",
-      "/skills/vite.svg",
-    ],
-    link: "https://github.com/sayanjit082805/TheMovieCentral",
-  },
-  {
-    id: 2,
-    title: "AtmosAlert",
-    description: "Get weather details of any city.",
-    img: "/banners/weather-1.png",
-    iconLists: [
-      "/skills/react.svg",
-      "/skills/tailwindcss.svg",
-      "/skills/javascript.svg",
-      "/skills/vite.svg",
-    ],
-    link: "https://github.com/sayanjit082805/AtmosAlert",
-  },
-  {
-    id: 3,
-    title: "FactFlow",
-    description: "Fetch random and fun facts.",
-    img: "/banners/fact.png",
-    iconLists: [
-      "/skills/react.svg",
-      "/skills/tailwindcss.svg",
-      "/skills/javascript.svg",
-      "/skills/framer.svg",
-      "/skills/vite.svg",
-    ],
-    link: "https://github.com/sayanjit082805/FactFlow",
-  },
-  {
-    id: 4,
-    title: "QuoteStream",
-    description: "Motivate yourself with inspirational quotes.",
-    img: "/banners/quotes.png",
-    iconLists: [
-      "/skills/html.svg",
-      "/skills/tailwindcss.svg",
-      "/skills/javascript.svg",
-    ],
-    link: "https://github.com/sayanjit082805/QuoteStream",
-  },
-  {
-    id: 5,
-    title: "PMSS Scholarship Portal",
-    description: "Collaborative project built for a hackathon.",
-    img: "/banners/scholarship.png",
-    iconLists: [
-      "/skills/next.svg",
-      "/skills/tailwindcss.svg",
-      "/skills/javascript.svg",
-      "/skills/postgres.svg",
-    ],
-    link: "https://github.com/sayanjit082805/TechRookies_sih_1728",
-  },
-  {
-    id: 6,
-    title: "AuraX",
-    description:
-      "Another weather app and my first project, in collaboration with two friends.",
-    img: "/banners/weather-2.png",
-    iconLists: [
-      "/skills/python.svg",
-      "/skills/gui.svg",
-    ],
-    link: "https://github.com/wolfofdalalst/weather-update",
-  },
-  
-];
+    ssr: false,
+  }
+);
+
 
 export default function Home() {
   return (
@@ -140,7 +67,7 @@ export default function Home() {
         </motion.div>
       </div>
       <div className="w-full flex md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-        <div className="md:w-[40rem] relative w-full max-w-7xl md:h-[70rem] h-[2850px]">
+        <div className="md:w-[40rem] relative w-full max-w-7xl md:h-[70rem] h-[2850px] mt-5">
           <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 lg:leading-tight">
             Projects
           </h1>
@@ -162,7 +89,7 @@ export default function Home() {
           {items.map((item) => (
             <div
               key={item.id}
-              className="flex items-center justify-center sm:w-96 w-[80vw] md:mt-20 mt-[50px] p-4"
+              className="flex items-center justify-center sm:w-96 w-[80vw] md:mt-20 mt-[54px] p-4"
             >
               <PinContainer title={item.title} href={item.link}>
                 <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh]">

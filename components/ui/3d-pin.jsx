@@ -50,15 +50,7 @@ export const PinPerspective = ({
   href
 }) => {
 
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
-  }
+ 
 
   return (
     (<motion.div
