@@ -67,7 +67,7 @@ export default function Home() {
         </motion.div>
       </div>
       <div className="w-full flex md:justify-center bg-black/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-        <div className="md:w-[40rem] relative w-full max-w-7xl md:h-[70rem] h-[2850px] mt-5">
+        <div className="md:w-[40rem] relative w-full max-w-7xl md:h-[70rem] h-[3350px] mt-5">
           <h1 className="text-5xl md:text-6xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50 lg:leading-tight">
             Projects
           </h1>
